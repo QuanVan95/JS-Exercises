@@ -3,7 +3,8 @@ var studentList = [
     { name : "Van Hong Quan", age:11, gender: "male"},
     { name : "Ngo Phuong Quan", age:12, gender: "female"},
     { name : "Nguyen Trung Nghia", age:33, gender: "male"},
-    { name : "Lam Phuong Nghi", age:17, gender: "female"}
+    { name : "Lam Phuong Nghi", age:17, gender: "female"},
+    { name : "OZ", age:12, gender: "female"}
 ];
 
 //Count female in student list
@@ -19,7 +20,7 @@ document.getElementById("total-female").innerHTML = countFemale;
 //Arrange the age in an ascending array
 var ascStudentList = [...studentList];
 ascStudentList.sort((a, b) => {
-    return (a.age > b.age) ? 1 : ((b.age > a.age) ? -1 : 0);
+    return (a.age > b.age) ? 1 : -1;
 });
 //Original way :v 
 // for(var i = 0; i < studentList.length; i++) {
