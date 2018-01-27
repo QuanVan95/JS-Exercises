@@ -1,0 +1,11 @@
+#std-table {
+      border : 0; 
+      background-color : #d1d6d8; 
+      width : 40%; 
+      align : center;
+      border-collapse: collapse;
+}
+
+#std-talbe, tr, th, td {
+    border: 1px solid black;
+}
