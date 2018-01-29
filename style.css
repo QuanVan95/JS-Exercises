@@ -1,11 +1,23 @@
-#std-table {
-      border : 0; 
-      background-color : #d1d6d8; 
-      width : 40%; 
-      align : center;
-      border-collapse: collapse;
+.student-table {
+    border : 0; 
+    background-color : #d1d6d8; 
+    width : 40%; 
+    margin: 0 auto;
+    border-collapse: collapse;
 }
 
-#std-talbe, tr, th, td {
+tr, th, td {
     border: 1px solid black;
+}
+
+.student-table-age {
+    width:20%;
+}
+
+.student-table-status {
+    width:15%;
+}
+
+.color-student {
+   background-color: #23b3e2;
 }

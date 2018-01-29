@@ -1,4 +1,4 @@
-var studentList = [
+var students = [
     { name : "Le Van Son ", age:26, gender: "male"},
     { name : "Van Hong Quan", age:11, gender: "male"},
     { name : "Ngo Phuong Quan", age:12, gender: "female"},
@@ -8,58 +8,37 @@ var studentList = [
 ];
 
 //Count female in student list
-
-let countFemale = studentList.filter(student => {
+const totalFemale = students.filter(student => { //const
   return student.gender === 'female';
 }).length;
-document.getElementById("total-female").innerHTML = countFemale;
-
+document.getElementById("total-female").innerHTML = totalFemale;
 //End Count female in student list
 
-
 //Arrange the age in an ascending array
-var ascStudentList = [...studentList];
-ascStudentList.sort((a, b) => {
-    return (a.age > b.age) ? 1 : -1;
+let ascStudentAge = [...students];
+ascStudentAge.sort((student1, student2) => {
+    return (student1.age > student2.age) ? 1 : -1;
 });
-//Original way :v 
-// for(var i = 0; i < studentList.length; i++) {
-//     for(var j = 0; j < studentList.length - 1 ; j++) {
-//         if(ascStudentList[j].age > ascStudentList[j + 1].age) {
-//             var tmp = ascStudentList[j];
-//             ascStudentList[j] = ascStudentList[j + 1];
-//             ascStudentList[j + 1] = tmp;
-//         }
-//     }
-// }
-var ascTable = '';
-for(i = 0;i < ascStudentList.length; i++){
-        ascTable+= '<tr>';
-        ascTable+= '<td>' + ascStudentList[i].name + '</td>';
-        ascTable+= '<td>' + ascStudentList[i].age + '</td>';
-        ascTable+= '<td>' + ascStudentList[i].gender + '</td>';
-        ascTable+= '</tr>';
+
+let ascAge = '';
+for (let i = 0; i < ascStudentAge.length; i++) {
+        ascAge += '<tr>' + '<td>' + ascStudentAge[i].name + '</td>' + '<td>'
+                  + ascStudentAge[i].age + '</td>' + '<td>' + ascStudentAge[i].gender + '</td>' + '</tr>';
 }
-document.getElementById('ascData').innerHTML = ascTable;
+document.getElementById('asc-age').innerHTML = ascAge;
 // End Arrange the age in an ascending array
 
-
 //Color students who have age more than 25
-var stdTable = '';
-for(i = 0;i < studentList.length; i++){
-    if(studentList[i].age > 25) {
-        stdTable+= '<tr bgcolor="#27b3e">';
-        stdTable+= '<td>' + studentList[i].name + '</td>';
-        stdTable+= '<td>' + studentList[i].age + '</td>';
-        stdTable+= '<td>' + studentList[i].gender + '</td>';
-        stdTable+= '</tr>';
-    }else {
-        stdTable+= '<tr>';
-        stdTable+= '<td>' + studentList[i].name + '</td>';
-        stdTable+= '<td>' + studentList[i].age + '</td>';
-        stdTable+= '<td>' + studentList[i].gender + '</td>';
-        stdTable+= '</tr>';
+let studentTable = '';
+for (let i = 0; i < students.length; i++) {
+    if (students[i].age > 25) {
+        studentTable += '<tr class="color-student">';
+    } else {
+        studentTable += '<tr>';
     }
+    studentTable += '<td>' + students[i].name + '</td>' + '<td>'+ students[i].age 
+                    + '</td>'+'<td>' + students[i].gender + '</td>' + '</tr>';
 }
-document.getElementById('tableData').innerHTML = stdTable;
+document.getElementById('color-student').innerHTML = studentTable;
 //End color students who have age more than 25
+
